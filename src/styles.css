@@ -39,12 +39,102 @@ p {
   margin-bottom: 1rem;
 }
 
-.Map {
-  display: none;
+.map {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 100%;
   height: 100vh;
   width: 100%;
-  background: red;
+  background: #3cba54;
+  transition: transform 200ms ease;
+}
+
+.map--show {
+  transform: translateX(-100%);
+}
+
+.map__close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.map:after {
+  display: block;
+  content: "I'm a map";
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 0;
+  font-weight: bold;
+  font-size: 2rem;
+  opacity: 0.25;
+  color: #fff;
+}
+
+.explorer {
+  position: absolute;
+  height: 400px;
+  width: 100%;
+  top: calc(100% - 50px);
+  left: 0;
+  background: #f9f9f9;
+  transition: transform 200ms ease;
+  z-index: 50;
+}
+
+.explorer--visible {
+  transform: translateY(calc(-100% + 50px));
+}
+
+.explorer__header {
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 50px;
+  padding: 0 1rem;
+}
+
+.explorer__list {
+  list-style: none;
+  margin: 0;
+}
+
+.explorer__body {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+.explorer__link {
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.explorer__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.explorer__title {
+  font-size: 1rem;
 }
